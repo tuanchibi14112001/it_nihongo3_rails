@@ -4,6 +4,8 @@
   <!-- ユーザーがログインしていた時の処理 -->
 
   <h4> メールアドレス： <%= current_user.email %> </h4>
+  <%= link_to "本一覧をみる",books_path %>
+  
   <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> <!-- ログアウトをする -->
 <% else %>
   <!-- ユーザーがログインしていなかった時の処理 -->
