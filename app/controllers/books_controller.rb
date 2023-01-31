@@ -8,6 +8,7 @@ class BooksController < ApplicationController
 
   # GET /books/1 or /books/1.json
   def show
+      @book_review = BookReview.new
   end
 
   # GET /books/new
@@ -22,7 +23,7 @@ class BooksController < ApplicationController
   # POST /books or /books.json
   def create
     @book = Book.new(book_params)
-
+    
     respond_to do |format|
       if @book.save
         format.html { redirect_to book_url(@book), notice: "Book was successfully created." }
